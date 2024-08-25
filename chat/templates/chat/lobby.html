@@ -25,6 +25,7 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       background-color: rgb(127, 173, 130);
       border-radius: 25px;
+      
     }
 
     .chat-header {
@@ -38,9 +39,12 @@
 
     .chat-messages {
       padding: 10px;
-      height: 70vh;
-      overflow-y: auto;
+      height: 100%;
+      max-height: 70vh;
+      overflow-y: scroll;
       border-radius: 25px;
+      display: flex;
+      flex-direction: column-reverse;
     }
 
     .received {
@@ -65,7 +69,8 @@
       display: flex;
       justify-content: space-between;
       padding: 10px;
-      border-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
       background-color: #fff;
     }
 
@@ -75,7 +80,6 @@
       border-radius: 25px;
       border: 2px solid #366d2b;
       width: 60%;
-      text-align: center;
     }
 
     .chat-input button {
@@ -99,7 +103,7 @@
 
   <div class="chat-container">
     <div class="chat-header">
-      <h1>Welcome to room {{room_name}}!</h1>
+      <h1>Room: {{room_name}}</h1>
       <h2></h2>
 
       <div id="alerts"></div>
