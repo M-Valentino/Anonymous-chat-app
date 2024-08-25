@@ -14,10 +14,10 @@
     }
 
     body {
-      font-family: monospace;
       background-color: #222;
       margin: 0;
       padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .chat-container {
@@ -40,10 +40,12 @@
       border-top-right-radius: var(--mainBdrRadius);
       padding-top: 1px;
       padding-bottom: 1px;
+      height: fit-content;
     }
 
     .chat-header h1 {
       font-size: 20px;
+      margin-bottom: 0;
     }
 
     .chat-messages {
@@ -58,20 +60,20 @@
 
     .received {
       text-align: right;
-      line-height: 15px;
-      padding-right: 5px;
     }
 
     .sent {
       text-align: left;
-      line-height: 15px;
+    }
+
+    .message {
+      line-height: 20px;
       padding-left: 5px;
     }
 
     .user_name {
-      font-weight: bold;
       font-style: italic;
-
+      font-size: smaller;
     }
 
     #form {
@@ -155,26 +157,29 @@
 
       if (data.type == 'connection_established') {
         messages.insertAdjacentHTML('afterbegin',
-          `<div class="${messageClass}">
-                            <p class='user_name'>Nz:</p>
+          `<p class="${messageClass} message">
+                            <span class='user_name'>Nz:</span>
+                            <br/>
                             ${data.message}
-                        </div>`);
+                        </p>`);
       }
 
       else if (messageClass == 'sent') {
         messages.insertAdjacentHTML('afterbegin',
-          `<div class="${messageClass}">
-                            <p class='user_name'>${data.user_name}:</p>
+          `<p class="${messageClass} message">
+                            <span class='user_name'>${data.user_name}:</span>
+                            <br/>
                             ${data.message}
-                        </div>`);
+                        </p>`);
       }
 
       else {
         messages.insertAdjacentHTML('afterbegin',
-          `<div class="${messageClass}">
-                            <p class='user_name'>You:</p>
+          `<p class="${messageClass} message">
+                            <span class='user_name'>You:</span>
+                            <br/>
                             ${data.message}
-                        </div>`);
+                        </p>`);
       }
 
     };
