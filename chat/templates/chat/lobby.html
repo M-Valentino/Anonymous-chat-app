@@ -11,6 +11,8 @@
   <style>
     :root {
       --mainBdrRadius: 10px;
+      --primColor: #168158;
+      --primColorDark: #104a35;
     }
 
     body {
@@ -23,17 +25,14 @@
     .chat-container {
       max-width: 650px;
       font-size: 18px;
-      color: #ffffff;
       margin: 20px auto;
       border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      background-color: rgb(127, 173, 130);
+      background-color: #d7ebd8;
       border-radius: var(--mainBdrRadius);
-      
     }
 
     .chat-header {
-      background-color: #366d2b;
+      background-color: var(--primColor);
       text-align: center;
       color: #fff;
       border-top-left-radius: var(--mainBdrRadius);
@@ -41,6 +40,7 @@
       padding-top: 1px;
       padding-bottom: 1px;
       height: fit-content;
+      box-shadow: 0 -2px 5px 0 #00000047;
     }
 
     .chat-header h1 {
@@ -60,20 +60,23 @@
 
     .received {
       text-align: right;
+      color: var(--primColorDark);
     }
 
     .sent {
       text-align: left;
+      color: #000;
     }
 
     .message {
-      line-height: 20px;
+      line-height: 24px;
       padding-left: 5px;
     }
 
     .user_name {
       font-style: italic;
       font-size: smaller;
+      filter: opacity(0.8);
     }
 
     #form {
@@ -89,15 +92,16 @@
       flex: 1;
       padding: 5px;
       border-radius: var(--mainBdrRadius);
-      border: 2px solid #366d2b;
+      border: 2px solid var(--primColor);
       width: 60%;
+      outline: none;
     }
 
     .chat-input button {
       margin-left: 10px;
       padding-left: 8px;
       padding-right: 8px;
-      background-color: #168158;
+      background-color: var(--primColor);
       color: #fff;
       border: none;
       cursor: pointer;
@@ -105,7 +109,7 @@
     }
 
     .chat-input button:hover {
-      background-color: #166146;
+      background-color: var(--primColorDark);
     }
   </style>
 </head>
