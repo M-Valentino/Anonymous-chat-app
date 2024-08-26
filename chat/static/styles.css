@@ -102,31 +102,13 @@ body {
   background-color: var(--primColorDark);
 }
 
-.create_lobby a {
-  color: #20af2a;
-  text-decoration: none;
+a {
+  color: var(--primColor);
 }
 
-.create_lobby a:hover {
-  text-decoration: underline;
+a:hover {
+  color: var(--primColorDark);
 }
-
-.lobbycode a {
-  color: #20af2a;
-  text-decoration: none;
-}
-
-.lobbycode a:hover {
-  text-decoration: underline;
-}
-
-/* h1 {
-  color: #dddaaa;
-}
-
-h4 {
-  color: #c31c1c
-} */
 
 .input-container {
   display: flex;
@@ -156,6 +138,7 @@ h4 {
   border: 2px solid var(--primColor);
   background-color: #fff;
   outline: none;
+  box-sizing: border-box;
 }
 
 .fw-button {
@@ -166,7 +149,8 @@ h4 {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
+  border-radius: var(--mainBdrRadius);
+  font-size: 17px;
 }
 
 .fw-button:hover {
