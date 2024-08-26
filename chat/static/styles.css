@@ -100,3 +100,72 @@ body {
 .chat-input button:hover {
   background-color: var(--primColorDark);
 }
+
+.create_lobby a {
+  color: #20af2a;
+  text-decoration: none;
+}
+
+.create_lobby a:hover {
+  text-decoration: underline;
+}
+
+.lobbycode a {
+  color: #20af2a;
+  text-decoration: none;
+}
+
+.lobbycode a:hover {
+  text-decoration: underline;
+}
+
+/* h1 {
+  color: #dddaaa;
+}
+
+h4 {
+  color: #c31c1c
+} */
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.input-box {
+  background-color: #292929;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.input-box h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #366d2b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(127, 173, 130);
+} */
