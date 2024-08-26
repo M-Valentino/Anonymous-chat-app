@@ -26,6 +26,9 @@ def lobby(request):
 def create_lobby(request):
     if request.method == 'POST':
         lobby_name = request.POST.get('lobby_name')
+
+        if len(lobby_name) > 16:
+          return render(request, '403.html')
         
         f=open("chat/private/lobbies.json")
         lobbies=json.load(f)

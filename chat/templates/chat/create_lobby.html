@@ -12,7 +12,8 @@
 <form method="post" action="{% url 'create_lobby' %}"> {% csrf_token %}
 
   <label for="lobby_name">Name your lobby:</label>
-  <input class="fw-input" type="text" id="lobby_name" name="lobby_name" value="{{ request.POST.lobby_name }}" required>
+  <input class="fw-input" type="text" id="lobby_name" name="lobby_name" value="{{ request.POST.lobby_name }}" required
+    maxlength="16">
 
   <label for="members">Enter the number of members:</label>
   <input class="fw-input" type="number" id="members" name="members" min="2" max="30" placeholder="2 to 30"
