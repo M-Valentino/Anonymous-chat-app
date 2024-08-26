@@ -2,6 +2,7 @@
   --mainBdrRadius: 10px;
   --primColor: #168158;
   --primColorDark: #104a35;
+  --secColor: #d7ebd8;
 }
 
 body {
@@ -16,7 +17,7 @@ body {
   font-size: 18px;
   margin: 20px auto;
   border-radius: 5px;
-  background-color: #d7ebd8;
+  background-color: var(--secColor);
   border-radius: var(--mainBdrRadius);
 }
 
@@ -135,7 +136,7 @@ h4 {
 }
 
 .input-box {
-  background-color: #292929;
+  background-color: var(--secColor);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -147,25 +148,27 @@ h4 {
   margin-bottom: 20px;
 }
 
-/* input {
+.fw-input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #333;
-  background-color: #1f1f1f;
-  color: #fff;
+  border-radius: var(--mainBdrRadius);
+  border: 2px solid var(--primColor);
+  background-color: #fff;
+  outline: none;
 }
 
-button {
+.fw-button {
   width: 100%;
   padding: 10px;
-  background-color: #366d2b;
+  background-color: var(--primColor);
   color: #fff;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
 }
 
-button:hover {
-  background-color: rgb(127, 173, 130);
-} */
+.fw-button:hover {
+  background-color: var(--primColorDark);
+}
