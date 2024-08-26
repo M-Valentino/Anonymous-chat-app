@@ -29,12 +29,13 @@
       <form id='form'>
         <input type="text" class="form-control" id="textinput" name="message"
           placeholder="I know you will try your best to be kind...">
+        <button class="first-btn">+</button>
         <button type="submit" id="send-button">Send</button>
       </form>
     </div>
 
   </div>
-
+  <script src="{% static 'vanillaEmojiPicker.js' %}"></script>
   <script type="text/javascript">
 
     const user_name = "{{user_name}}";
@@ -96,8 +97,18 @@
       }))
       form.reset()
     })
-  </script>
+    debugger;
+    new EmojiPicker({
+      trigger: [
+        {
+          selector: '.first-btn',
+          insertInto: ['.form-control']
+        },
+      ],
+      closeButton: true,
+    });
 
+  </script>
 </body>
 
 </html>
