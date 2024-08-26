@@ -5,20 +5,19 @@
 {% block h1 %} Welcome to Anonymous Chats! {% endblock %}
 {% block h4 %} {{message}} {% endblock %}
 
-{% block div %} 
+{% block div %}
 <form method="post" action="{% url 'lobby' %}"> {% csrf_token %}
-    <label for="name">Just enter a made up name here:</label>
-    <input class="fw-input" type="text" id="name" name="name" required>
+  <label for="name">Just enter a made up name here:</label>
+  <input class="fw-input" type="text" id="name" name="name" required>
 
-    <label for="lobbyCode">Enter lobby code if you got one:</label>
-    <input class="fw-input" type="text" id="lobbycode" name="lobbycode" required>
+  <label for="lobbyCode">Enter lobby code if you got one:</label>
+  <input class="fw-input" type="text" id="lobbycode" name="lobbycode" required>
 
-    <button class="fw-button" type="submit">Enter Lobby</button>
+  <button class="fw-button" type="submit">Enter Lobby</button>
 </form>
 
 <div class="create_lobby">
-      <p>Don't have a lobby code? Well.... <a href="{% url 'create_lobby' %}">create your own.</a></p>
+  <p>Don't have a lobby code? Well.... <a href="{% url 'create_lobby' %}">create your own.</a></p>
 
-    </div>
+</div>
 {% endblock %}
-
