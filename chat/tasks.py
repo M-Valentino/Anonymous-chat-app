@@ -6,7 +6,7 @@ app = Celery('tasks', broker='redis://localhost:6379/0')
 
 @app.task
 def delete_idle_lobbies():
-    with open('chat/static/lobbies.json', 'r+') as file:
+    with open('chat/private/lobbies.json', 'r+') as file:
         lobbies = json.load(file)
         current_time = time.time()
 

@@ -13,7 +13,7 @@ def lobby(request):
         lobby_code = request.POST.get('lobbycode')
 
         #checking if lobby code exists
-        f=open("chat/static/lobbies.json")
+        f=open("chat/private/lobbies.json")
         lobbies=json.load(f)
         f.close()
 
@@ -27,7 +27,7 @@ def create_lobby(request):
     if request.method == 'POST':
         lobby_name = request.POST.get('lobby_name')
         
-        f=open("chat/static/lobbies.json")
+        f=open("chat/private/lobbies.json")
         lobbies=json.load(f)
         f.close()
 
@@ -37,7 +37,7 @@ def create_lobby(request):
                 break
         
         lobbies.update({lobby_code:lobby_name})
-        with open("chat/static/lobbies.json","w") as file:
+        with open("chat/private/lobbies.json","w") as file:
             json.dump(lobbies, file)
         
         return render(request, 'chat/create_lobby.html',{'lobby_code': lobby_code})
