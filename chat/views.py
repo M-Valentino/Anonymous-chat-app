@@ -10,6 +10,9 @@ def index(request):
 def lobby(request):
     if request.method == 'POST':
         name = request.POST.get('name')
+        if len(name) > 16:
+          return render(request, '403.html')
+        
         lobby_code = request.POST.get('lobbycode')
 
         #checking if lobby code exists
