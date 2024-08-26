@@ -22,6 +22,23 @@ You will need to install the following Python modules in addition to Django:
 - `Channels`
 - `Daphne`
 
+### Running With Debug Mode:
+First go to `settings.py` and make sure `DEBUG = True`.
+Then run:
+```
+python manage.py runserver
+
+```
+
+### Running Without Debug Mode:
+First go to `settings.py` and make sure `DEBUG = False`.
+Then run:
+```
+python manage.py collectstatic
+python manage.py runserver
+
+```
+
 ## License
 This project is licensed under the MIT License.
 
