@@ -7521,7 +7521,8 @@ const EmojiPicker = function(options) {
                       position: fixed;
                       top: 0;
                       left: 0;
-                      width: ${pickerWidth}px;
+                      width: 95vw;
+                      max-width: ${pickerWidth}px;
                       height: ${pickerHeight}px;
                       border-radius: 5px;
                       box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.62);
@@ -7755,7 +7756,7 @@ const EmojiPicker = function(options) {
                       <ul>
                           ${categoriesHTML}
 
-                          <li class="fg-picker-special-buttons" id="fg-emoji-picker-move"><a class="fg-emoji-picker-move" href="#">${icons.move}</a></li>
+                          ${this.options.moveButton ? `<li class="fg-picker-special-buttons" id="fg-emoji-picker-move"><a class="fg-emoji-picker-move" href="#">${icons.move}</a></li>` : ''}
                           ${this.options.closeButton ? `<li class="fg-picker-special-buttons"><a id="fg-emoji-picker-close-button" href="#">`+icons.close+`</a></li>` : ''}
                       </ul>
                   </nav>
