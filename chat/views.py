@@ -17,13 +17,19 @@ def lobby(request):
             lobbies = json.load(f)
 
         lobby = next((l for l in lobbies if l['code'] == lobby_code), None)
-
-        if lobby is None:
+        if lobby:
+            if lobby['current_num_members'] > 0:
+                lobby['current_num_members'] -= 1
+                with open("chat/private/lobbies.json", "w") as file:
+                    json.dump(lobbies, file)
+                return render(request, 'chat/lobby.html', {'user_name': name, 'lobbycode': lobby_code, 'room_name': lobby['name'], 'max_num_members': lobby['max_num_members']})
+            else:
+                return render(request, 'chat/index.html', {'message': 'That lobby is full.'})
+        else:
             return render(request, 'chat/index.html', {'message': 'Lobby does not exist. Please check your lobby code.'})
 
-        return render(request, 'chat/lobby.html', {'user_name': name, 'lobbycode': lobby_code, 'room_name': lobby['name'], 'max_num_members': lobby['max_num_members']})
-
     return render(request, 'chat/lobby.html')
+
 
 def create_lobby(request):
     if request.method == 'POST':
@@ -41,7 +47,7 @@ def create_lobby(request):
             if not any(lobby['code'] == lobby_code for lobby in lobbies):
                 break
 
-        lobbies.append({'code': lobby_code, 'name': lobby_name, 'max_num_members': numMembers})
+        lobbies.append({'code': lobby_code, 'name': lobby_name, 'max_num_members': numMembers, 'current_num_members': numMembers})
         with open("chat/private/lobbies.json", "w") as file:
             json.dump(lobbies, file)
         
