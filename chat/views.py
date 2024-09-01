@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import random, string
 import json
 
@@ -28,7 +28,8 @@ def lobby(request):
         else:
             return render(request, 'chat/index.html', {'message': 'Lobby does not exist. Please check your lobby code.'})
 
-    return render(request, 'chat/lobby.html')
+    # If user tries to visit /lobby/ without joinging a chat
+    return redirect('/')
 
 
 def create_lobby(request):
