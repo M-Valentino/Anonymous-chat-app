@@ -26,12 +26,13 @@
     </div>
 
     <div class="chat-input">
-      <form id='form'>
+      <form id='form' prevent>
         <input type="text" class="form-control" id="textinput" name="message"
           placeholder="I know you will try your best to be kind...">
-        <button class="first-btn">+</button>
-        <button type="submit" id="send-button">Send</button>
+        
+        <button type="submit" id="send-button" class="small-button">Send</button>
       </form>
+      <button class="first-btn small-button">+</button>
     </div>
 
   </div>
@@ -95,9 +96,9 @@
         'message': message,
         'user_name': user_name
       }))
-      form.reset()
+      // form.reset()
     })
-    debugger;
+
     new EmojiPicker({
       trigger: [
         {

@@ -70,12 +70,20 @@ html, body {
 }
 
 #form {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+}
+
+.chat-input {
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
   border-bottom-left-radius: var(--mainBdrRadius);
   border-bottom-right-radius: var(--mainBdrRadius);
-  background-color: #fff;
 }
 
 .chat-input input {
@@ -83,22 +91,21 @@ html, body {
   padding: 5px;
   border-radius: var(--mainBdrRadius);
   border: 2px solid var(--primColor);
-  width: 60%;
   outline: none;
 }
 
-.chat-input button {
+.small-button {
   margin-left: 10px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 8px;
   background-color: var(--primColor);
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 20px;
+  height: fit-content;
 }
 
-.chat-input button:hover {
+.small-button:hover {
   background-color: var(--primColorDark);
 }
 
