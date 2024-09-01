@@ -21,14 +21,14 @@ def lobby(request):
         if lobby is None:
             return render(request, 'chat/index.html', {'message': 'Lobby does not exist. Please check your lobby code.'})
 
-        return render(request, 'chat/lobby.html', {'user_name': name, 'lobbycode': lobby_code, 'room_name': lobby['name'], 'num_members': lobby['num_members']})
+        return render(request, 'chat/lobby.html', {'user_name': name, 'lobbycode': lobby_code, 'room_name': lobby['name'], 'max_num_members': lobby['max_num_members']})
 
     return render(request, 'chat/lobby.html')
 
 def create_lobby(request):
     if request.method == 'POST':
         lobby_name = request.POST.get('lobby_name')
-        numMembers = int(request.POST.get('num_members'))
+        numMembers = int(request.POST.get('max_num_members'))
 
         if len(lobby_name) > 16:
             return render(request, '403.html')
@@ -41,7 +41,7 @@ def create_lobby(request):
             if not any(lobby['code'] == lobby_code for lobby in lobbies):
                 break
 
-        lobbies.append({'code': lobby_code, 'name': lobby_name, 'num_members': numMembers})
+        lobbies.append({'code': lobby_code, 'name': lobby_name, 'max_num_members': numMembers})
         with open("chat/private/lobbies.json", "w") as file:
             json.dump(lobbies, file)
         
