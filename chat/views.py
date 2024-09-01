@@ -28,7 +28,7 @@ def lobby(request):
 def create_lobby(request):
     if request.method == 'POST':
         lobby_name = request.POST.get('lobby_name')
-        numMembers = request.POST.get('num_members')
+        numMembers = int(request.POST.get('num_members'))
 
         if len(lobby_name) > 16:
             return render(request, '403.html')
