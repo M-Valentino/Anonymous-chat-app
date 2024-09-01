@@ -10,7 +10,7 @@
   <label for="name">Just enter a made up name here:</label>
   <input class="fw-input" type="text" id="name" name="name" required maxlength="16">
 
-  <label for="lobbyCode">Enter lobby code if you got one:</label>
+  <label for="lobbyCode">Lobby Code:</label>
   <input class="fw-input" type="text" id="lobbycode" name="lobbycode" required>
 
   <button class="fw-button" type="submit">Enter Lobby</button>
@@ -20,4 +20,10 @@
   <p>Don't have a lobby code? Well.... <a href="{% url 'create_lobby' %}">create your own.</a></p>
 
 </div>
+<script>
+  const lobbyCode = localStorage.getItem("lobby_code");
+  if (lobbyCode) {
+    document.getElementById("lobbycode").value = lobbyCode;
+  }
+</script>
 {% endblock %}

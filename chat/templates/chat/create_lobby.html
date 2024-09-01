@@ -23,6 +23,11 @@
 <div class="lobbycode">
   <p>Your lobby code: {{ lobby_code }}<br> Now go <a href="{% url 'index' %}">back</a> and enter your lobby.</p>
 </div>
+<script>
+  const lobbyCode = "{{ lobby_code }}";
+  // Eventually this value will prefill the lobby code input when joining a lobby
+  localStorage.setItem("lobby_code", lobbyCode);
+</script>
 {% endif %}
 
 {% endblock %}
