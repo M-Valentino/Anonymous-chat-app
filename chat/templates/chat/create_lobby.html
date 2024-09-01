@@ -11,8 +11,8 @@
   <input class="fw-input" type="text" id="lobby_name" name="lobby_name" value="{{ request.POST.lobby_name }}" required
     maxlength="16">
 
-  <label for="members">Enter the number of members:</label>
-  <input class="fw-input" type="number" id="members" name="members" min="2" max="30" placeholder="2 to 30"
+  <label for="num_members">Enter the number of members:</label>
+  <input class="fw-input" type="number" id="num_members" name="num_members" min="2" max="30" placeholder="2 to 30"
     value="{{ request.POST.num_members }}" required>
 
   <button class="fw-button" type="submit">Done</button>

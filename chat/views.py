@@ -21,7 +21,7 @@ def lobby(request):
         if lobby is None:
             return render(request, 'chat/index.html', {'message': 'Lobby does not exist. Please check your lobby code.'})
 
-        return render(request, 'chat/lobby.html', {'user_name': name, 'lobbycode': lobby_code, 'room_name': lobby['name']})
+        return render(request, 'chat/lobby.html', {'user_name': name, 'lobbycode': lobby_code, 'room_name': lobby['name'], 'num_members': lobby['num_members']})
 
     return render(request, 'chat/lobby.html')
 
