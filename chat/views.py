@@ -39,7 +39,7 @@ def create_lobby(request):
 
         if len(lobby_name) > 16:
             return render(request, '403.html')
-        
+        #  create pgsql database and call model for the lobby and do migrations
         with open("chat/private/lobbies.json") as f:
             lobbies = json.load(f)
 
@@ -55,3 +55,7 @@ def create_lobby(request):
         return render(request, 'chat/create_lobby.html', {'lobby_code': lobby_code})
     
     return render(request, 'chat/create_lobby.html')
+
+def about(request):
+    # here is where you would call a list of all your instances of the list in the lobby model
+    return render(request, 'chat/about.html')
