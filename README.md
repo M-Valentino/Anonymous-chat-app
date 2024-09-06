@@ -22,6 +22,9 @@ You will need to install the following Python modules in addition to Django:
 - `Channels`
 - `Daphne`
 
+To install these all at once, you can run:
+`pip install -r requirements.txt`
+
 ### Running With Debug Mode:
 First go to `settings.py` and make sure `DEBUG = True`.
 Then run:
